@@ -96,14 +96,14 @@ async def ForceSub(bot: Client, update: Message, file_id: str = False, mode="che
         else:
             return True
     except UserNotParticipant:
-        text="""*𝗝𝗢𝗜𝗡 𝗢𝗨𝗥 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗧𝗢 𝗚𝗘𝗧 𝗙𝗜𝗟𝗘, താങ്കൾ ഞങ്ങളുടെ ചാനലിൽ Join ചെയ്തിട്ടില്ല ദയവായി Request to Join press ചെയ്ത ശേഷം വീണ്ടും Try again-ൽ Click ചെയ്യുക**"""
+        text=""" × 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗧𝗼 𝗚𝗲𝘁 𝗙𝗶𝗹𝗲𝘀 × """
 
         buttons = [
             [
-                InlineKeyboardButton("📢 Request to Join Channel 📢", url=invite_link)
+                InlineKeyboardButton("Rᴇϙᴜᴇsᴛ Tᴏ Jᴏɪɴ Cʜᴀɴɴᴇʟ", url=invite_link)
             ],
             [
-                InlineKeyboardButton(" 🔄 Try Again 🔄 ", callback_data=f"{mode}#{file_id}")
+                InlineKeyboardButton(" Tʀʏ Aɢᴀɪɴ ", callback_data=f"{mode}#{file_id}")
             ]
         ]
         

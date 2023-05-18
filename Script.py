@@ -2,14 +2,13 @@ class script(object):
     START_TXT = """👋 Hello {},  Me :), An Autofilter who can provide you movies in your groups"""
     HELP_TXT = """<i>🙋🏻‍♂️ Here is my help menu"""
     ABOUT_TXT = """<b> My Name : {}
-🕵‍♂ Dᴇᴠᴏʟᴏᴘᴇʀ: <a href='https://t.me/Oriksonic'>Rogue</a>
+🕵‍♂ Dᴇᴠᴏʟᴏᴘᴇʀ: <a href='https://t.me/Mahir_Modan'>Max 1000</a>
 📚 Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
 🖥 Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
 🎪 DᴀᴛᴀBᴀsᴇ : <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
-🔋 Bᴏᴛɢʀᴏᴜᴘ : @movies_channel_malayalam </b>"""
+🔋 Bᴏᴛɢʀᴏᴜᴘ : @CinemaChatRoom </b>"""
     SOURCE_TXT = """<b>NOTE:</b>
-<b>⚠️ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɴᴏᴛ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ
-◆ ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : 𝖭𝖮𝖳 𝖠𝖵𝖠𝖨𝖫𝖠𝖡𝖫𝖤 𝖱𝖨𝖦𝖧𝖳 𝖭𝖮𝖶"""
+<b>⚠️ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɴᴏᴛ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ"""
     MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>ꜰɪʟᴛᴇʀꜱ</b>
 - ꜰɪʟᴛᴇʀ ɪꜱ ᴀ ꜰᴇᴀᴛᴜʀᴇ ᴡᴇʀᴇ ᴜꜱᴇʀꜱ ᴄᴀɴ ꜱᴇᴛ ᴀᴜᴛᴏᴍᴀᴛᴇᴅ ʀᴇᴘʟɪᴇꜱ ꜰᴏʀ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴋᴇʏᴡᴏʀᴅ ᴀɴᴅ ɪ ᴡɪʟʟ ʀᴇꜱᴘᴏɴᴅ ᴡʜᴇɴᴇᴠᴇʀ ᴀ ᴋᴇʏᴡᴏʀᴅ ɪꜱ ꜰᴏᴜɴᴅ ɪɴ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ
 

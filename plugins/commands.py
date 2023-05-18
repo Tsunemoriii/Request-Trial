@@ -24,10 +24,10 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('𝗨𝗣𝗗𝗔𝗧𝗘𝗦🔖', url='https://t.me/movies_channel_malayalam')
+                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CinemaRoom')
             ],
             [
-                InlineKeyboardButton('𝗛𝗘𝗟𝗣⚙️', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                InlineKeyboardButton('Hᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -43,13 +43,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕𝗔𝗗𝗗 𝗠𝗘 𝗧𝗢 𝗨𝗥 𝗚𝗥𝗢𝗨𝗣𝗦➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('× 𝐀𝐃𝐃 𝐌𝐄 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏 ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('𝗨𝗣𝗗𝗔𝗧𝗘𝗦🔖', url='https://t.me/movies_channel_malayalam'),
-            InlineKeyboardButton('𝗠𝗢𝗩𝗜𝗘𝗦🔎', url='https://t.me/+cZQmduIduzwzZDY1')
+            InlineKeyboardButton('Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CinemaRoom')
             ],[      
-            InlineKeyboardButton('𝗛𝗘𝗟𝗣⚙️', callback_data='help'),
-            InlineKeyboardButton('𝗔𝗕𝗢𝗨𝗧📚', callback_data='about')
+            InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -66,13 +66,13 @@ async def start(client, message):
             return
 
         buttons = [[
-            InlineKeyboardButton('➕𝗔𝗗𝗗 𝗠𝗘 𝗧𝗢 𝗨𝗥 𝗚𝗥𝗢𝗨𝗣𝗦➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('× 𝐀𝐃𝐃 𝐌𝐄 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏 ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('𝗨𝗣𝗗𝗔𝗧𝗘𝗦🔖', url='https://t.me/movies_channel_malayalam'),
-            InlineKeyboardButton('𝗠𝗢𝗩𝗜𝗘𝗦🔎', url='https://t.me/+cZQmduIduzwzZDY1')
+            InlineKeyboardButton('Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CinemaRoom')
             ],[
-            InlineKeyboardButton('𝗛𝗘𝗟𝗣⚙️', callback_data='help'),
-            InlineKeyboardButton('𝗔𝗕𝗢𝗨𝗧📚', callback_data='about')
+            InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -125,7 +125,7 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton("⚡ ᴊᴏɪɴ ɢʀᴏᴜᴘ ⚡", url="https://t.me/movies_channel_malayalam") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton("⚡ ᴊᴏɪɴ ɢʀᴏᴜᴘ ⚡", url="https://t.me/CinemaChatRoom") ] ] ),
                     protect_content=msg.get('protect', False),
                     )
             except FloodWait as e:
@@ -229,9 +229,9 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("ᴊᴏɪɴ ɢʀᴏᴜᴘ", url="https://t.me/+cZQmduIduzwzZDY1"),
-                                               InlineKeyboardButton("ꜱʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/movies_channel_malayalam") ],
-                                             [ InlineKeyboardButton("Support", url="https://t.me/botsupportastra") ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("Jᴏɪɴ Gʀᴏᴜᴘ", url="https://t.me/CinemaChatRoom"),
+                                               InlineKeyboardButton("Sʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/CinemaChatRoom") ],
+                                             [ InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/CinemaRoom") ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     

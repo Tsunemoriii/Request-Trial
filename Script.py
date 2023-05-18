@@ -5,7 +5,7 @@ class script(object):
 🕵‍♂ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/Mahir_Modan'>Max 1000</a>
 📚 Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
 🖥 Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
-🎪 DᴀᴛᴀBᴀsᴇ: <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
+🎪 Dᴀᴛᴀʙᴀsᴇ: <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
 🔋 Bᴏᴛ Gʀᴏᴜᴘ: @CinemaChatRoom </b>"""
     SOURCE_TXT = """<b>NOTE:</b>
 <b>⚠️ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɴᴏᴛ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ"""

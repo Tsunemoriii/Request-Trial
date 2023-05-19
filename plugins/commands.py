@@ -125,7 +125,7 @@ async def start(client, message):
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton("⚡ ᴊᴏɪɴ ɢʀᴏᴜᴘ ⚡", url="https://t.me/CinemaChatRoom") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton("⚡ Jᴏɪɴ Oᴜʀ Gʀᴏᴜᴘ ⚡", url="https://t.me/CinemaChatRoom") ] ] ),
                     protect_content=msg.get('protect', False),
                     )
             except FloodWait as e:

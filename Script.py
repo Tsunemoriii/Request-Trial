@@ -1,14 +1,13 @@
 class script(object):
-    START_TXT = """Hello {},  Me :), An Autofilter who can provide you movies in your groups"""
+    START_TXT = """Hello,  Me :), An Autofilter who can provide you movies/series files, /n/nJoin my group : t.me/CinemaChatRoom"""
     HELP_TXT = """<i>Here is my help menu"""
-    ABOUT_TXT = """<b> 🥷 Mʏ Nᴀᴍᴇ: {}
-🕵‍♂ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/Mahir_Modan'>Max 1000</a>
-📚 Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
-🖥 Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
-🎪 Dᴀᴛᴀʙᴀsᴇ: <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
-🔋 Bᴏᴛ Gʀᴏᴜᴘ: @CinemaChatRoom </b>"""
+    ABOUT_TXT = """<b>★ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/l_Damon_l'>Dᴀᴍᴏɴ Sᴀʟᴠᴀᴛᴏʀᴇ</a>
+★ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
+★ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
+★ Dᴀᴛᴀʙᴀsᴇ: <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
+★ Bᴏᴛ Gʀᴏᴜᴘ: <a href='https://t.me/CinemaChatRoom'>CɪɴᴇᴍᴀCʜᴀᴛRᴏᴏᴍ</a></b>"""
     SOURCE_TXT = """<b>NOTE:</b>
-<b>⚠️ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɴᴏᴛ ᴀɴ ᴏᴘᴇɴ ꜱᴏᴜʀᴄᴇ ᴘʀᴏᴊᴇᴄᴛ"""
+<b>Tʜɪs Bᴏᴛ Is Nᴏᴛ Aɴ Oᴘᴇɴ Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ, Cᴏɴᴛᴀᴄᴛ Tᴏ <a href='https://t.me/l_Damon_l'>Bᴏᴛ Oᴡɴᴇʀ</a>"""
     MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>ꜰɪʟᴛᴇʀꜱ</b>
 - ꜰɪʟᴛᴇʀ ɪꜱ ᴀ ꜰᴇᴀᴛᴜʀᴇ ᴡᴇʀᴇ ᴜꜱᴇʀꜱ ᴄᴀɴ ꜱᴇᴛ ᴀᴜᴛᴏᴍᴀᴛᴇᴅ ʀᴇᴘʟɪᴇꜱ ꜰᴏʀ ᴀ ᴘᴀʀᴛɪᴄᴜʟᴀʀ ᴋᴇʏᴡᴏʀᴅ ᴀɴᴅ ɪ ᴡɪʟʟ ʀᴇꜱᴘᴏɴᴅ ᴡʜᴇɴᴇᴠᴇʀ ᴀ ᴋᴇʏᴡᴏʀᴅ ɪꜱ ꜰᴏᴜɴᴅ ɪɴ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ
 
@@ -31,7 +30,7 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 3. ʙᴜᴛᴛᴏɴꜱ ꜱʜᴏᴜʟᴅ ʙᴇ ᴘʀᴏᴘᴇʀʟʏ ᴘᴀʀꜱᴇᴅ ᴀꜱ ᴍᴀʀᴋᴅᴏᴡɴ ꜰᴏʀᴍᴀᴛ
 
 <b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/Autofilter_bot)</code>
+<code>[Button Text](buttonurl:https://t.me/AutofilterBot)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""

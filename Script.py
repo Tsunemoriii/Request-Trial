@@ -1,5 +1,6 @@
 class script(object):
-    START_TXT = """Hello,  Me :), An Autofilter who can provide you movies/series files, /n/nJoin my group : t.me/CinemaChatRoom"""
+    START_TXT = """"<b>Hello</b> Me :), An Autofilter who can provide you movies/series files.
+Group : t.me/CinemaChatRoom"""
     HELP_TXT = """<i>Here is my help menu"""
     ABOUT_TXT = """<b>★ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/l_Damon_l'>Dᴀᴍᴏɴ Sᴀʟᴠᴀᴛᴏʀᴇ</a>
 ★ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>

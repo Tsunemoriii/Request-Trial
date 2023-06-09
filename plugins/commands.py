@@ -229,9 +229,9 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("Jᴏɪɴ Gʀᴏᴜᴘ", url="https://t.me/CinemaChatRoom"),
-                                               InlineKeyboardButton("Sʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/CinemaChatRoom") ],
-                                             [ InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/CinemaRoom") ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("Jᴏɪɴ Gʀᴏᴜᴘ", url="https://t.me/+sXe90zYH9FdmZGFl"),
+                                               InlineKeyboardButton("Sʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/HenTaii_Store") ],
+                                             [ InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/HenTaii_Store") ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
                     

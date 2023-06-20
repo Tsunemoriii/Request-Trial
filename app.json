@@ -15,11 +15,15 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/EvamariaTG/EvaMaria",
+    "website": "https://github.com/MahirModan/HAFB",
     "repository": "https://github.com/MahirModan/HAFB",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
+            "required": true
+        },
+        "WEBHOOK": {
+            "description": "True/False if your server is web support required? the value is True else False",
             "required": true
         },
         "API_ID": {

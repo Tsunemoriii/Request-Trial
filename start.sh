@@ -4,7 +4,7 @@ then
   git clone https://github.com/MahirModan/HAFB /HAFB
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /HAFB
+  git clone https://github.com/MahirModan/HAFB /HAFB
 fi
 cd /HAFB
 pip3 install -U -r requirements.txt

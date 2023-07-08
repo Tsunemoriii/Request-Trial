@@ -1,12 +1,12 @@
 class script(object):
-    START_TXT = """"<b>ɪ ᴄᴀɴ ғᴜʟʟғɪʟ ʏᴏᴜʀ ʟᴜsᴛ.
-ᴍᴀɪɴ : t.me/HenTaii_Store"""
+    START_TXT = """"<b>Hello</b> Me :), An Autofilter who can provide you movies/series files.
+Group : t.me/CinemaChatRoom"""
     HELP_TXT = """<i>Here is my help menu"""
     ABOUT_TXT = """<b>★ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/l_Damon_l'>Dᴀᴍᴏɴ Sᴀʟᴠᴀᴛᴏʀᴇ</a>
 ★ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʏʀᴏɢʀᴀᴍ</a>
 ★ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/download/releases/3.0/'>Pʏᴛʜᴏɴ 3</a>
 ★ Dᴀᴛᴀʙᴀsᴇ: <a href='https://www.mongodb.com/'>MᴏɴɢᴏDB</a>
-★ Bᴏᴛ Gʀᴏᴜᴘ: <a href='https://t.me/+sXe90zYH9FdmZGFl'>Sᴀᴍᴀᴊ Sᴇᴠᴀᴋ</a></b>"""
+★ Bᴏᴛ Gʀᴏᴜᴘ: <a href='https://t.me/CinemaChatRoom'>CɪɴᴇᴍᴀCʜᴀᴛRᴏᴏᴍ</a></b>"""
     SOURCE_TXT = """<b>NOTE:</b>
 <b>Tʜɪs Bᴏᴛ Is Nᴏᴛ Aɴ Oᴘᴇɴ Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ, Cᴏɴᴛᴀᴄᴛ Tᴏ <a href='https://t.me/l_Damon_l'>Bᴏᴛ Oᴡɴᴇʀ</a>"""
     MANUELFILTER_TXT = """ʜᴇʟᴘ: <b>ꜰɪʟᴛᴇʀꜱ</b>
@@ -84,12 +84,11 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 • /broadcast - <code>ᴛᴏ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴀ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ᴀʟʟ ᴜꜱᴇʀꜱ</code>"""
     
 
-    STATUS_TXT = """<b>ᴛᴏᴛᴀʟ ғɪʟᴇs: <code>{}</code>
-ᴛᴏᴛᴀʟ ᴜsᴇʀs: <code>{}</code>
-ᴛᴏᴛᴀʟ ᴄʜᴀᴛs: <code>{}</code>
-ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ: <code>{}</code>
-ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code>
-</b>"""
+    STATUS_TXT = """<b>📂 ᴛᴏᴛᴀʟ ғɪʟᴇs: <code>{}</code>
+👤 ᴛᴏᴛᴀʟ ᴜsᴇʀs: <code>{}</code>
+♻️ ᴛᴏᴛᴀʟ ᴄʜᴀᴛs: <code>{}</code>
+🗃️ ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ: <code>{}</code>
+🆓 ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code></b>"""
     
     LOG_TEXT_G = """#NewGroup
 Gʀᴏᴜᴘ = {}(<code>{}</code>)

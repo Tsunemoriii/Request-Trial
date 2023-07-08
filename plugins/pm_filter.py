@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 import asyncio
 import re
 import ast
@@ -14,11 +15,13 @@ from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerId
 from utils import get_size, is_subscribed, get_poster, temp, get_settings, save_group_settings, search_gagala
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results
+from database.auto_del_mess import auto_del_insert
 from database.filters_mdb import (
     del_all,
     find_filter,
     get_filters,
 )
+from plugins import get_del_time
 import logging
 
 logger = logging.getLogger(__name__)
@@ -382,12 +385,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
-                await client.send_cached_media(
+                msg = await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False 
                 )
+                tim = str(get_del_time())
+                auto_del_insert(tim,query.from_user.id,msg.id)
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
@@ -418,12 +423,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         await query.answer()
-        await client.send_cached_media(
+        msg = await client.send_cached_media(
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
+        tim = str(get_del_time())
+        auto_del_insert(tim,query.from_user.id,msg.id)
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
@@ -431,7 +438,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('× 𝐀𝐃𝐃 𝐌𝐄 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏 ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/HenTaii_Store')
+            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CinemaRoom')
             ],[
             InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about')
@@ -829,14 +836,14 @@ async def manual_filters(client, message, text=False):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            await client.send_message(
+                            msg = await client.send_message(
                                 group_id, 
                                 reply_text, 
                                 disable_web_page_preview=True,
                                 reply_to_message_id=reply_id)
                         else:
                             button = eval(btn)
-                            await client.send_message(
+                            msg = await client.send_message(
                                 group_id,
                                 reply_text,
                                 disable_web_page_preview=True,
@@ -844,20 +851,25 @@ async def manual_filters(client, message, text=False):
                                 reply_to_message_id=reply_id
                             )
                     elif btn == "[]":
-                        await client.send_cached_media(
+                        msg = await client.send_cached_media(
                             group_id,
                             fileid,
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
                         )
+                        g_id = group_id
                     else:
                         button = eval(btn)
-                        await message.reply_cached_media(
+                        msg = await message.reply_cached_media(
                             fileid,
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
+                        g_id = msg.chat.id
+                    tim = str(get_del_time())
+                    
+                    auto_del_insert(tim, g_id,msg.id)
                 except Exception as e:
                     logger.exception(e)
                 break

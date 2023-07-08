@@ -11,20 +11,21 @@ from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
+from database.auto_del_mess import auto_del_insert
 from plugins.fsub import ForceSub
+from plugins import get_del_time
 import re
 import json
 import base64
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
-
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
             [
-                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/HenTaii_Store')
+                InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CinemaRoom')
             ],
             [
                 InlineKeyboardButton('Hᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -46,7 +47,7 @@ async def start(client, message):
             InlineKeyboardButton('× 𝐀𝐃𝐃 𝐌𝐄 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏 ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/HenTaii_Store')
+            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CinemaRoom')
             ],[      
             InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about')
@@ -69,7 +70,7 @@ async def start(client, message):
             InlineKeyboardButton('× 𝐀𝐃𝐃 𝐌𝐄 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏 ×', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/HenTaii_Store')
+            InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url='https://t.me/CinemaRoom')
             ],[
             InlineKeyboardButton('Hᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('Aʙᴏᴜᴛ', callback_data='about')
@@ -121,24 +122,27 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
-                await client.send_cached_media(
+                msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton("⚡ Jᴏɪɴ Oᴜʀ Gʀᴏᴜᴘ ⚡", url="https://t.me/+sXe90zYH9FdmZGFl") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton("⚡ Jᴏɪɴ Oᴜʀ Gʀᴏᴜᴘ ⚡", url="https://t.me/CinemaChatRoom") ] ] ),
                     protect_content=msg.get('protect', False),
                     )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                await client.send_cached_media(
+                msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                tim = str(get_del_time())
+                auto_del_insert(tim,message.from_user.id, msg.id)
             except Exception as e:
                 logger.warning(e, exc_info=True)
+                msg = False
                 continue
             await asyncio.sleep(1) 
         await sts.delete()
@@ -198,6 +202,8 @@ async def start(client, message):
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
                 )
+            tim = str(get_del_time())
+            auto_del_insert(tim,message.from_user.id, msg.id)
             filetype = msg.media
             file = getattr(msg, filetype)
             title = file.file_name
@@ -229,11 +235,13 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("Jᴏɪɴ Gʀᴏᴜᴘ", url="https://t.me/+sXe90zYH9FdmZGFl"),
-                                               InlineKeyboardButton("Sʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/HenTaii_Store") ],
-                                             [ InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/HenTaii_Store") ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("Jᴏɪɴ Gʀᴏᴜᴘ", url="https://t.me/CinemaChatRoom"),
+                                               InlineKeyboardButton("Sʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/CinemaChatRoom") ],
+                                             [ InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ", url="https://t.me/CinemaRoom") ] ] ),
         protect_content=True if pre == 'filep' else False,
         )
+    tim = str(get_del_time())
+    auto_del_insert(tim,message.from_user.id, msg.id)
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))

@@ -15,11 +15,15 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/EvamariaTG/EvaMaria",
-    "repository": "https://github.com/Hackermanker/reqrepo",
+    "website": "https://github.com/Tsunemoriii/Request-Trial",
+    "repository": "https://github.com/Tsunemoriii/Request-Trial",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
+            "required": true
+        },
+        "WEBHOOK": {
+            "description": "True/False if your server is web support required? the value is True else False",
             "required": true
         },
         "API_ID": {

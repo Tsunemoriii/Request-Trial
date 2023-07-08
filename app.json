@@ -22,6 +22,10 @@
             "description": "Your bot token.",
             "required": true
         },
+        "WEBHOOK": {
+            "description": "True/False if your server is web support required? the value is True else False",
+            "required": true
+        },
         "API_ID": {
             "description": "Get this value from https://my.telegram.org",
             "required": true

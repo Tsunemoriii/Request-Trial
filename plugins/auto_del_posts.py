@@ -8,7 +8,7 @@ def till_date(date):
     return z
 
 from database.auto_del_mess import auto_del_get, auto_del_delete
-
+"""
 while True:
     z = auto_del_get()
     for i in z:
@@ -16,3 +16,4 @@ while True:
         if tim == datetime.now():
             app.delete_messages(i["chat_id"],i["mess_id"])
             auto_del_delete(i["datee"], i["chat_id"], i["mess_id"])
+"""

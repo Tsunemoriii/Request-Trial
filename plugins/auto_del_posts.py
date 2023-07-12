@@ -1,6 +1,6 @@
 from info import AUTO_DEL
 from datetime import datetime, timedelta
-from bot import app
+# from bot import app importing app gives err have to find alt
 
 def till_date(date):
     form = "%Y-%m-%d %H:%M:%S.%f"

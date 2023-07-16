@@ -18,6 +18,6 @@ async def auto_ddel_postss(app: Client):
     z = auto_del_get()
     for i in z:
         tim = till_date(i["datee"])
-        if tim == datetime.now():
+        if tim <= datetime.now():
             await app.delete_messages(i["chat_id"],i["mess_id"])
             auto_del_delete(i["datee"], i["chat_id"], i["mess_id"])

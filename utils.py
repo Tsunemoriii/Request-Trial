@@ -69,7 +69,8 @@ async def is_subscribed(bot, query):
         logger.exception(e)
         return False
     else:
-        if not (user.status == enums.ChatMemberStatus.BANNED):
+
+        if user.status in [enums.ChatMemberStatus.OWNER, enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.MEMBER]:
             return True
         else:
             return False

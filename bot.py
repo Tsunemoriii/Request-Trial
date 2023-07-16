@@ -7,15 +7,19 @@ logging.getLogger().setLevel(logging.INFO)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("imdbpy").setLevel(logging.ERROR)
 
-from pyrogram import Client, __version__
+from typing import AsyncGenerator, Optional, Union
+
+from aiohttp import web
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from pyrogram import Client, __version__, types
 from pyrogram.raw.all import layer
+
 from database.ia_filterdb import Media
 from database.users_chats_db import db
-from info import SESSION, API_ID, API_HASH, BOT_TOKEN, LOG_STR
+from info import API_HASH, API_ID, BOT_TOKEN, LOG_STR, SESSION
+from plugins.auto_del_posts import auto_ddel_postss
 from utils import temp
-from typing import Union, Optional, AsyncGenerator
-from pyrogram import types
-from aiohttp import web
+
 # from plugins import web_server
 
 PORT = "8000"
@@ -94,6 +98,9 @@ class Bot(Client):
                 yield message
                 current += 1
 
-
+schedule = AsyncIOScheduler()
 app = Bot()
+schedule.add_job(auto_ddel_postss,'interval', [app], seconds = 5)
+schedule.start()
 app.run()
+

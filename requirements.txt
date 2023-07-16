@@ -1,3 +1,4 @@
+apscheduler==3.10.1
 pyrogram>=2.0.30
 tgcrypto
 pymongo[srv]==3.12.3

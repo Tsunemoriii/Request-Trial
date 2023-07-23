@@ -71,7 +71,7 @@
             "required": true,
             "value": 24
         },
-        "AUTO__DEL_IN":{
+        "AUTO_DEL_IN":{
             "description": "Available  options, Hour, Minute.",
             "required": true,
             "value": "Hour"

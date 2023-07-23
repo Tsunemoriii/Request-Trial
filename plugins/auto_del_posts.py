@@ -13,11 +13,31 @@ def till_date(date):
 
 from database.auto_del_mess import auto_del_delete, auto_del_get
 
+async def is_media_post(app: Client, chat, message_id, date):
+    mess = message_id
+    while True:
+        try:
+            UwU = await app.get_messages(chat, mess)
+        except Exception:
+            break
+        if UwU.text:
+            break
+        else:
+            try:
+                auto_del_delete(date, chat, mess)
+                await app.delete_messages(chat, mess)
+                mess += 1
+            except Exception:
+                mess += 1
+                pass
+            
 
 async def auto_ddel_postss(app: Client):
     z = auto_del_get()
     for i in z:
         tim = till_date(i["datee"])
         if tim <= datetime.now():
-            await app.delete_messages(i["chat_id"],i["mess_id"])
-            auto_del_delete(i["datee"], i["chat_id"], i["mess_id"])
+            try:
+                await is_media_post(app, i["chat_id"], i["mess_id"], i["datee"])
+            except Exception:
+                pass

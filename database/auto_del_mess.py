@@ -23,6 +23,6 @@ def auto_del_get():
 
 def auto_del_delete(date, chat_id:int, message_id:int):
     query = mycol.find_one({"chat_id":chat_id,"mess_id":message_id,"datee":date})
-    if not query:
-        mycol.insert_one({"chat_id":chat_id,"mess_id":message_id,"datee":date})
+    if query:
+        mycol.delete_one({"chat_id":chat_id,"mess_id":message_id,"datee":date})
     return

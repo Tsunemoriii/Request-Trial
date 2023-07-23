@@ -36,7 +36,7 @@ auth_grp = environ.get('AUTH_GROUP', '')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 AUTO_DEL = int(environ.get("AUTO_DEL_TIME",24))
-AUTO_DEL_IN = environ.get("AUTO__DEL_IN").lower()
+AUTO_DEL_IN = environ.get("AUTO_DEL_IN").lower()
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "")

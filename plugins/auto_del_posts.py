@@ -42,7 +42,7 @@ async def auto_ddel_postss(app: Client):
         if tim <= datetime.now():
             try:
                 await is_media_post(app, i["chat_id"], i["mess_id"], i["datee"])
-                print("Delete the post")
+                print("Deleted the post")
             except Exception:
                 print("Failed")
                 pass

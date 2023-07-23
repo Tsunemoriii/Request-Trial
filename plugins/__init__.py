@@ -1,6 +1,6 @@
 from aiohttp import web
 from .route import routes
-from info import AUTO_DEL
+from info import AUTO_DEL, AUTO_DEL_IN
 from datetime import datetime, timedelta
 #from bot import app
 
@@ -11,7 +11,10 @@ async def web_server():
 
 def get_del_time():
     now = datetime.now()
-    total = now + timedelta(hours=AUTO_DEL)
+    if AUTO_DEL_IN.lower() == "minute":
+        total = now + timedelta(minutes=AUTO_DEL)
+    else:
+        total = now + timedelta(hours=AUTO_DEL)
     return total
 
 def till_date(date):

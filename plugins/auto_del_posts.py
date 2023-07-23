@@ -19,6 +19,7 @@ async def is_media_post(app: Client, chat, message_id, date):
         try:
             UwU = await app.get_messages(chat, mess)
         except Exception:
+            print("Exception in is_media_post line 22")
             break
         if UwU.empty:
             break
@@ -41,5 +42,7 @@ async def auto_ddel_postss(app: Client):
         if tim <= datetime.now():
             try:
                 await is_media_post(app, i["chat_id"], i["mess_id"], i["datee"])
+                print("Delete the post")
             except Exception:
+                print("Failed")
                 pass

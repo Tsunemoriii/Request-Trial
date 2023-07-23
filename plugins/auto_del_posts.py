@@ -12,7 +12,7 @@ def till_date(date):
     return z
 
 from database.auto_del_mess import auto_del_delete, auto_del_get
-
+"""
 async def is_media_post(app: Client, chat, message_id, date):
     mess = message_id
     while True:
@@ -23,7 +23,7 @@ async def is_media_post(app: Client, chat, message_id, date):
             break
         if UwU.empty:
             break
-        if UwU.text:
+        if UwU.text and UwU.text.lower() != "No such file exist":
             break
         else:
             try:
@@ -32,7 +32,7 @@ async def is_media_post(app: Client, chat, message_id, date):
                 mess += 1
             except Exception:
                 mess += 1
-                pass
+                pass"""
             
 
 async def auto_ddel_postss(app: Client):
@@ -41,7 +41,8 @@ async def auto_ddel_postss(app: Client):
         tim = till_date(i["datee"])
         if tim <= datetime.now():
             try:
-                await is_media_post(app, i["chat_id"], i["mess_id"], i["datee"])
+                await app.delete_messages(i["chat_id"],i["mess_id"])
+                auto_del_delete(i["datee"], i["chat_id"], i["mess_id"])
                 print("Deleted the post")
             except Exception:
                 print("Failed")

@@ -129,6 +129,8 @@ async def start(client, message):
                     reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton("⚡ Jᴏɪɴ Oᴜʀ Gʀᴏᴜᴘ ⚡", url="https://t.me/CinemaChatRoom") ] ] ),
                     protect_content=msg.get('protect', False),
                     )
+                tim = str(get_del_time())
+                auto_del_insert(tim,message.from_user.id, msg.id)
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")

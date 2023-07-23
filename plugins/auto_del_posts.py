@@ -20,6 +20,8 @@ async def is_media_post(app: Client, chat, message_id, date):
             UwU = await app.get_messages(chat, mess)
         except Exception:
             break
+        if UwU.empty:
+            break
         if UwU.text:
             break
         else:

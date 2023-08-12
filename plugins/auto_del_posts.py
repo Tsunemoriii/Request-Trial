@@ -44,6 +44,6 @@ async def auto_ddel_postss(app: Client):
                 await app.delete_messages(i["chat_id"],i["mess_id"])
                 auto_del_delete(i["datee"], i["chat_id"], i["mess_id"])
                 print("Deleted the post")
-            except Exception:
-                print("Failed")
+            except Exception as e:
+                print(f"Failed: {e}\n")
                 pass

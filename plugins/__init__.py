@@ -18,7 +18,12 @@ def get_del_time():
     return total
 
 def till_date(date):
-    form = "%Y-%m-%d %H:%M:%S.%f"
-    z = datetime.strptime(date,form)
+    try:
+        form = "%Y-%m-%d %H:%M:%S.%f"
+        z = datetime.strptime(date,form)
+    except ValueError:
+        date = date.rsplit(".",1)[0]
+        form = "%Y-%m-%d %H:%M:%S"
+        z = datetime.strptime(date,form)
     return z
 
